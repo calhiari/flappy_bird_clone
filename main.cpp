@@ -3,9 +3,10 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(512, 512), "Flappy bird clone");
+    sf::RenderWindow window(sf::VideoMode(512, 512), "Flappy Bird Clone");
     sf::RectangleShape player(sf::Vector2f(100.f, 100.f));
-    player.setFillColor(sf::Color::Red);
+    // player.setFillColor(sf::Color::Red);
+    player.setOrigin(206.0, 206.0);       // set origin of the player
 
     while (window.isOpen())
     {
@@ -28,6 +29,10 @@ int main()
             }
         }
 
+        /*if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+            sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+            player.setPosition(sf::Vector2f(mousePos));
+        }*/
 
         window.clear();
         window.draw(player);
